@@ -214,12 +214,10 @@ int main(void) {
     multi_handle = curl_multi_init(); // init curl multi handle
     curl_multi_setopt(multi_handle, CURLMOPT_SOCKETFUNCTION, handle_socket);
     curl_multi_setopt(multi_handle, CURLMOPT_TIMERFUNCTION, start_timeout);
-    const char* urls[] = {
-    "wss://fstream.binance.com/ws/bnbusdt@aggTrade",
-    //"wss://fstream.binance.com/ws/btcusdt@aggTrade"
+    const char* wss_urls[] = {
     };
     // add Downloads in multiUV example
-    for (auto& url : urls)
+    for (auto& url : wss_urls)
     {
         CURL* curl_easy_handle = curl_easy_init();
         if (curl_easy_handle)
